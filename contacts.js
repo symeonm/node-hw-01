@@ -10,8 +10,7 @@ async function listContacts() {
 
 async function getContactById(contactId) {
   const data = await listContacts();
-  const contactsData = JSON.parse(data);
-  const contactID = contactsData.find((obj) => obj.id === contactId);
+  const contactID = data.find((obj) => obj.id === contactId);
   return contactID || null;
 }
 
